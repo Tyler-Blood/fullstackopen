@@ -24,3 +24,9 @@ This rep is to be used for fullstackopen coursework
 - changed all of the const variables to an object
 - rewrote all of the components using dot and bracket notation
 - added forEach loop to Total to loop over all exercise numbers
+
+### Component state, event handlers
+
+- added scratch folder to work on examples
+
+### A more complex state, debugging React apps

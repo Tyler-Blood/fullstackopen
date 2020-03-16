@@ -35,7 +35,6 @@ const Header = (props) => {
 }
 
 const Content = (props) => {
-console.log(props);
   return (
       <>
         <Part1 part={props.parts[0]} />
@@ -67,7 +66,7 @@ const Total = (props) => {
   let totalExercises = 0;
   props.parts.forEach(part => {
         totalExercises += part.exercises;
-      })
+      });
   return (
     <p>Number of exercises {totalExercises}</p>
   )
