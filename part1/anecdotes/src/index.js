@@ -8,7 +8,7 @@ const App = (props) => {
   const [best, setBest] = useState(0)
 
   const handleBest = () => {
-    let mostVotes = Math.max(...votes);
+    const mostVotes = Math.max(...votes);
     setBest(votes.indexOf(mostVotes));
   }
   const handleClick = () => {

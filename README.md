@@ -30,3 +30,8 @@ This rep is to be used for fullstackopen coursework
 - added scratch folder to work on examples
 
 ### A more complex state, debugging React apps
+
+- created a unicafe app that collects user reviews, displays them and shows statistics
+- created anecdotes app that displays a random anecdote
+- can vote on anecdotes and click next anecdote to display random one from list
+- shows anecdote with most votes at bottom
