@@ -6,12 +6,18 @@ const App = (props) => {
   const [selected, setSelected] = useState(0)
   const [votes, setVotes] = useState(voteCopy)
   const [best, setBest] = useState(0)
+
+  const handleBest = () => {
+    let mostVotes = Math.max(...votes);
+    setBest(votes.indexOf(mostVotes));
+  }
   const handleClick = () => {
     setSelected(Math.round(Math.random() * (props.anecdotes.length - 1)));
   }
   const handleVote = () => {
     votes[selected] += 1;
-    setVotes([...votes])
+    setVotes([...votes]);
+    handleBest();   
   }
 
   return (
@@ -22,6 +28,8 @@ const App = (props) => {
       <Button onClick={handleVote} name="vote" />
       <Button onClick={handleClick} name="next anecdote" />
       <Header text="Anecdote with most votes" />
+      <Content text={props.anecdotes[best]} />
+      <Content text={"has " + votes[best] + " votes"} />
     </div>
   )
 }
