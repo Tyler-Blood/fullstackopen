@@ -35,3 +35,11 @@ This rep is to be used for fullstackopen coursework
 - created anecdotes app that displays a random anecdote
 - can vote on anecdotes and click next anecdote to display random one from list
 - shows anecdote with most votes at bottom
+
+## Part 2 | Communicating with server
+
+### Rendering a collection, modules
+
+- copied index.js from courseinfo>part1 into courseinfo>part2
+- refactored the app.js into separate modules for each component
+- used map and reduce to eliminate code reuse
