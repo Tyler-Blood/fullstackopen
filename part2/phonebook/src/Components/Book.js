@@ -1,6 +1,6 @@
 import React from 'react'
 
-const PhoneBook = ({ persons, newSearch }) => {
+const Book = ({ persons, newSearch }) => {
 if (!newSearch){
   return (
     <>
@@ -33,25 +33,4 @@ if (!newSearch){
 
 }}
 
-{/* <table>
-    <tbody>
-      {newSearch ? persons.filter(person => person.name.includes(newSearch) === true) {
-        (
-        <tr key={i}>
-          <td key={person.name}>{person.name}</td>
-          <td key={person.number}>{person.number}</td>
-        </tr>
-        ):
-      }
-        persons.map((person, i) => {
-        return (
-        <tr key={i}>
-          <td key={person.name}>{person.name}</td>
-          <td key={person.number}>{person.number}</td>
-        </tr>
-      )})}
-  </tbody>
-</table>
-} */}
-
-export default PhoneBook
+export default Book

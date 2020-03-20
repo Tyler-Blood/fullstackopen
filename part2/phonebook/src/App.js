@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
-import PhoneBook from './Components/Book'
+import Book from './Components/Book'
+import Search from './Components/Search'
+import AddNew from './Components/AddNew'
 
 const App = () => {
   const [ persons, setPersons] = useState([
@@ -45,37 +47,12 @@ const App = () => {
   return (
     <div>
       <h1>Phonebook</h1>
-      <div>
-        Search: 
-        <input 
-          onChange={handleSearch}
-        />
-      </div>
-      <h2>Add New</h2>
-      <form onSubmit={addName}>
-        <div>
-          name: 
-            <input 
-              value={newName}
-              onChange={handleNameChange}
-             />
-        </div>
-        <div>
-          number: 
-            <input 
-              type='tel'
-              value={newNumber}
-              onChange={handleNumberChange}
-             />
-        </div>
-        <div>
-          <button type="submit">add</button>
-        </div>
-      </form>
+      <Search handleSearch={handleSearch} />
+      <AddNew addName={addName} newName={newName} handleNameChange={handleNameChange} newNumber={newNumber} handleNumberChange={handleNumberChange} />
       <h2>Numbers</h2>
       <table>
         <tbody>
-          <PhoneBook persons={persons} newSearch={newSearch}/>
+          <Book persons={persons} newSearch={newSearch}/>
         </tbody>
       </table>
     </div>

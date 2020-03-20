@@ -43,3 +43,10 @@ This rep is to be used for fullstackopen coursework
 - copied index.js from courseinfo>part1 into courseinfo>part2
 - refactored the app.js into separate modules for each component
 - used map and reduce to eliminate code reuse
+
+### Forms
+
+- created a phonebook react app that allows you to keep track of people and there phone numbers
+- there is a section to search the names, add a new name, and display the names,
+- search functionality allows you to search case insensitively for names that may appear in the book and only displays names that match the search
+- adding names adds them to the list without refreshing
