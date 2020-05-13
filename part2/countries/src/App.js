@@ -2,6 +2,8 @@ import React, { useState, useEffect, cloneElement } from 'react';
 import axios from 'axios';
 import Search from'./Components/Search';
 import List from './Components/List';
+import './Components/show.css';
+
 
 const App = () => {
   const [countries, setCountries ] = useState([])

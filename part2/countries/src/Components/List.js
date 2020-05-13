@@ -1,35 +1,44 @@
 import React from 'react'
+import OneCountry from './OneCountry'
+import ShowButton from './ShowButton'
 
 const List = ({ countries, newSearch }) => {
   const regex = new RegExp(newSearch, 'gi');
   const nameMatches = countries.filter(country => country.name.match(regex));
   const matches = [...nameMatches];
+
+  function handleShow(alpha3Code){
+    var showingElement = document.querySelector(`#${alpha3Code}`);
+    console.log(showingElement);
+    showingElement.classList.toggle('isHidden');
+    console.log(showingElement);
+  }
+
   if (matches.length > 10){
     return(
       <p>Too many matches, specify another filter</p>
     )
   } else if (matches.length === 1){
+    let showCountry = matches[0];
     return(
-      <>
-        <h1>{matches[0].name}</h1>
-        <p>capital: {matches[0].capital}</p>
-        <p>population: {matches[0].population}</p>
-        <h2>Languages:</h2>
-        <ul>
-          {matches[0].languages.map(language =>
-            <li key={language.name}>{language.name}</li>
-          )}
-        </ul>
-        <img src={matches[0].flag} alt="flag" height="250px" />
-      </>
+      <OneCountry showCountry={showCountry}/>
     )
   } else {
     return (
       <ul>
-          {matches.map((match) =>
-          (
-            <li key={match.alpha3Code}>{match.name}</li>
-        ))}
+          {matches.map((match, i) =>{
+            let alpha3Code = match.alpha3Code;
+            let showCountry = matches[i];
+          return (
+            <li key={match.alpha3Code}>
+              {match.name}
+              <ShowButton handleShow={handleShow} match={match}/>
+              <div id={alpha3Code} className='isHidden'>
+                <OneCountry showCountry={showCountry}/>
+              </div>
+            </li>
+            
+        )})}
       </ul>
     )
 
